@@ -5,6 +5,11 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 8fr 4fr;
   grid-template-areas: 'Main Cart';
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'Main';
+  }
 `;
 export const Main = styled.main`
   grid-area: Main;
@@ -14,6 +19,7 @@ export const RouteBoxSwitch = styled(Switch)`
   background: lightblue;
 `;
 export const Footer = styled.footer`
+  border-top: 1px solid #fff;
   height: 10vh;
   display: flex;
   align-items: center;

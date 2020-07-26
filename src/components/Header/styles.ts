@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: ${(props) => props.theme.colors.primary};
+  border-bottom: 1px solid #fff;
   height: 10vh;
   display: flex;
   flex-direction: row;
@@ -9,7 +10,7 @@ export const Container = styled.div`
 `;
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 950px;
+  max-width: 1000px;
   align-self: stretch;
 
   display: flex;
@@ -20,5 +21,12 @@ export const Wrapper = styled.div`
   div {
     display: flex;
     flex-direction: row;
+  }
+
+  @media (min-width: 1500px) {
+    max-width: 1300px;
+  }
+  @media (min-width: 2000px) {
+    max-width: 1800px;
   }
 `;

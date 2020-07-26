@@ -7,9 +7,14 @@ export const Container = styled.nav`
     text-decoration: none;
     color: ${(props) => props.theme.colors.text};
     font-weight: 600;
+    font-size: 16px;
 
     &:hover {
       color: ${(props) => props.theme.colors.textHover};
+    }
+
+    @media (max-width: 550px) {
+      font-size: 15px;
     }
   }
 `;

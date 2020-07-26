@@ -7,8 +7,8 @@ export default {
   colors: {
     primary: 'lightblue',
     secundary: '#ffffff',
-    text: '#333',
-    textHover: '#222',
+    text: '#222',
+    textHover: '#111',
     background: '#f5f5f5',
   },
 };
