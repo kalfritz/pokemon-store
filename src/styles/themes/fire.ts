@@ -6,8 +6,9 @@ export default {
   },
   colors: {
     primary: '#ff2020',
-    secundary: '#ffffff',
-    text: '#ffffff',
+    secundary: '#eee',
+    text: '#fff',
+    textHover: '#eee',
     background: '#f5f5f5',
   },
 };

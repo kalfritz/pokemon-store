@@ -36,7 +36,7 @@ const Eletro: React.FC = () => {
         <Footer>
           <nav>
             <Link to="/eletro/">See catalog</Link>
-            <Link to="/eletro/historic">See purchase historic</Link>
+            <Link to="/eletro/historic">See historic</Link>
           </nav>
         </Footer>
       </Main>

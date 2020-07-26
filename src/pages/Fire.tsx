@@ -31,7 +31,7 @@ const Fire: React.FC = () => {
         <Footer>
           <nav>
             <Link to="/fire/">See catalog</Link>
-            <Link to="/fire/historic">See purchase historic</Link>
+            <Link to="/fire/historic">See historic</Link>
           </nav>
         </Footer>
       </Main>

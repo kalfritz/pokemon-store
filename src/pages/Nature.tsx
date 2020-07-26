@@ -30,7 +30,7 @@ const Nature: React.FC = () => {
         <Footer>
           <nav>
             <Link to="/nature/">See catalog</Link>
-            <Link to="/nature/historic">See purchase historic</Link>
+            <Link to="/nature/historic">See historic</Link>
           </nav>
         </Footer>
       </Main>

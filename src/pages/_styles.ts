@@ -16,13 +16,25 @@ export const RouteBoxSwitch = styled(Switch)`
 export const Footer = styled.footer`
   height: 10vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: green;
+  background: ${(props) => props.theme.colors.primary};
 
   nav {
     display: flex;
     justify-content: space-between;
     width: 50%;
+    min-width: 300px;
+    margin: auto;
+
+    a {
+      text-decoration: none;
+      color: ${(props) => props.theme.colors.text};
+      font-size: 16px;
+      font-weight: 600;
+
+      &:hover {
+        color: ${(props) => props.theme.colors.textHover};
+      }
+    }
   }
 `;

@@ -31,7 +31,7 @@ const Water: React.FC = () => {
         <Footer>
           <nav>
             <Link to="/water">See catalog</Link>
-            <Link to="/water/historic">See purchase historic</Link>
+            <Link to="/water/historic">See historic</Link>
           </nav>
         </Footer>
       </Main>

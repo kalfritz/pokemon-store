@@ -8,6 +8,7 @@ export default {
     primary: 'lightblue',
     secundary: '#ffffff',
     text: '#333',
+    textHover: '#222',
     background: '#f5f5f5',
   },
 };

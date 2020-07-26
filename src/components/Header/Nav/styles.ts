@@ -6,6 +6,10 @@ export const Container = styled.nav`
     margin-left: 15px;
     text-decoration: none;
     color: ${(props) => props.theme.colors.text};
-    font-weight: bold;
+    font-weight: 600;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.textHover};
+    }
   }
 `;
