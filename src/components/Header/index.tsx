@@ -5,15 +5,19 @@ import Logo from './Logo';
 import SearchBar from './SearchBar';
 import Nav from './Nav';
 
-import { Container } from './styles';
+import { Container, Wrapper } from './styles';
 
 const Header: React.FC = () => {
   const { title, pokemon } = useContext(ThemeContext);
   return (
     <Container>
-      <Logo pokemon={pokemon} />
-      <SearchBar />
-      <Nav />
+      <Wrapper>
+        <div>
+          <Logo pokemon={pokemon} />
+          <SearchBar />
+        </div>
+        <Nav />
+      </Wrapper>
     </Container>
   );
 };

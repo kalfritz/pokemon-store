@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Router, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import Context from './context/Context';
 

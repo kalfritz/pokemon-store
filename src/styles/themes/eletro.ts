@@ -1,6 +1,9 @@
 export default {
   title: 'eletro',
-  pokemon: 'pikachu',
+  pokemon: {
+    id: 25,
+    name: 'pikachu',
+  },
   colors: {
     primary: '#ff0',
     secundary: '#ffffff',

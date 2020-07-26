@@ -1,10 +1,13 @@
 export default {
   title: 'fire',
-  pokemon: 'charmander',
+  pokemon: {
+    id: 4,
+    name: 'charmander',
+  },
   colors: {
-    primary: '#ff0000',
+    primary: '#ff2020',
     secundary: '#ffffff',
-    text: '#333',
+    text: '#ffffff',
     background: '#f5f5f5',
   },
 };

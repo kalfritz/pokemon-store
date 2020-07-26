@@ -1,8 +1,11 @@
 export default {
   title: 'water',
-  pokemon: 'squirtle',
+  pokemon: {
+    id: 7,
+    name: 'squirtle',
+  },
   colors: {
-    primary: '#0000ff',
+    primary: 'lightblue',
     secundary: '#ffffff',
     text: '#333',
     background: '#f5f5f5',
