@@ -40,8 +40,6 @@ export function* fetchFirePokemon() {
   const response = yield call(api.get, `type/10`);
   const { pokemon } = response.data;
 
-  console.tron.log(pokemon);
-
   const pokemonListResponse = yield all(
     pokemon.map((item: Item) => call(api.get, `${item.pokemon.url}`))
   );
@@ -54,8 +52,6 @@ export function* fetchFirePokemon() {
       price: faker.commerce.price(),
     };
   });
-
-  console.tron.log(pokemonList);
 
   yield put(fetchFirePokemonSuccess({ pokemonList }));
 }

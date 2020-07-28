@@ -78,7 +78,7 @@ export default function cart(state: Cart = INITIAL_STATE, action: Action) {
     switch (action.type) {
       case '@cart/ADD': {
         const { item, store } = action.payload;
-        console.tron.log(item);
+
         if (store === 'fire') {
           draft.fire.items.push(item!);
           draft.fire.total = draft.fire.items.reduce(

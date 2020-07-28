@@ -29,7 +29,6 @@ const Logo: React.FC<Props> = ({ pokemon }) => {
     async function loadPokemonPic() {
       const { data } = await api.get(`pokemon-form/${pokemon.id}`);
       setMainPokemonSprites(data.sprites);
-      console.tron.log(data.sprites.front_shiny);
     }
     loadPokemonPic();
   }, [pokemon]);
