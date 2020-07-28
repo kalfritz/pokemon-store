@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import { Container } from './styles';
 import api from 'services/api';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from 'styled-components';
 
 interface Props {
   pokemon: {
@@ -18,6 +20,7 @@ interface MainPokemonSprites {
 }
 
 const Logo: React.FC<Props> = ({ pokemon }) => {
+  const { store } = useContext(ThemeContext);
   const [
     mainPokemonSprites,
     setMainPokemonSprites,
@@ -26,6 +29,7 @@ const Logo: React.FC<Props> = ({ pokemon }) => {
     async function loadPokemonPic() {
       const { data } = await api.get(`pokemon-form/${pokemon.id}`);
       setMainPokemonSprites(data.sprites);
+      console.tron.log(data.sprites.front_shiny);
     }
     loadPokemonPic();
   }, [pokemon]);
@@ -35,7 +39,9 @@ const Logo: React.FC<Props> = ({ pokemon }) => {
   }, [pokemon]);
   return (
     <Container>
-      <img src={mainPokemonSprites?.front_shiny} alt={pokemon.name} />
+      <Link to={`/${store}`}>
+        <img src={mainPokemonSprites?.front_shiny} alt={pokemon.name} />
+      </Link>
     </Container>
   );
 };

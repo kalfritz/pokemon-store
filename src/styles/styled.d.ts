@@ -2,10 +2,11 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    title: string;
+    store: string;
     pokemon: {
       id: number;
       name: string;
+      pic: string;
     };
     colors: {
       primary: string;

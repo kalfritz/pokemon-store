@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { lighten } from 'polished';
 
-export const Container = styled.div`
-  height: 80vh;
+export const PokemonItems = styled.div`
   background: #eee;
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   overflow: auto;
+  border-top: 1px solid #fff;
 
   @media (max-width: 1100px) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -21,12 +21,22 @@ export const Container = styled.div`
   }
   @media (max-width: 550px) {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    padding: 15px;
   }
+  @media (max-width: 400px) {
+    grid-gap: 10px;
+    padding: 10px;
+  }
+`;
+
+export const Container = styled.div`
+  height: 80vh;
+  overflow: auto;
 `;
 
 export const PokemonItem = styled.div`
   background: #fff;
-  border: 1px solid #999;
   border-bottom: 0;
   border-radius: 5px;
   &:last-child {
@@ -35,11 +45,20 @@ export const PokemonItem = styled.div`
 
   & > div {
     padding: 20px;
+    border: 1px solid #999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    div {
+    img {
       height: 15vh;
-      background: #333;
       margin-bottom: 15px;
+      background: #fcfcfc;
+      background: #ffffff;
+
+      @media (max-width: 550px) {
+        height: 12vh;
+      }
     }
     p {
       margin: 5px 0px;
@@ -54,11 +73,11 @@ export const PokemonItem = styled.div`
     background: ${(props) => props.theme.colors.primary};
     display: flex;
     flex-direction: row;
-    border-top: 1px solid #ccc;
+    border-top: 0px solid #ccc;
 
     & > div {
       background: #333;
-      width: 20%;
+      width: 25%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -71,7 +90,7 @@ export const PokemonItem = styled.div`
     }
 
     & > button {
-      width: 80%;
+      width: 75%;
       cursor: pointer;
       font-size: 16px;
       background: ${(props) => props.theme.colors.primary};
@@ -80,6 +99,15 @@ export const PokemonItem = styled.div`
       border: 0;
       outline: 0;
       padding: 10px 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        fill: ${(props) => props.theme.colors.text};
+        margin-left: 5px;
+      }
 
       &:hover {
         background: ${(props) => lighten(0.02, props.theme.colors.primary)};

@@ -13,6 +13,19 @@ export const Container = styled.div`
     outline: 0;
     border-radius: 15px;
 
+    @media (max-width: 950px) {
+      width: 28vw;
+      padding: 10px 10px;
+    }
+
+    @media (max-width: 550px) {
+      font-size: 16px;
+    }
+    @media (max-width: 400px) {
+      font-size: 15px;
+      width: 27vw;
+    }
+
     &:focus {
       border: 0;
     }
@@ -23,8 +36,12 @@ export const Container = styled.div`
     align-items: center;
     border: 0;
     outline: 0;
-    background: transparent;
+    background: none;
     cursor: pointer;
+
+    @media (max-width: 550px) {
+      padding: 5px;
+    }
 
     &:hover {
       transform: scale(1.2);

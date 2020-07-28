@@ -8,7 +8,7 @@ import Nav from './Nav';
 import { Container, Wrapper } from './styles';
 
 const Header: React.FC = () => {
-  const { title, pokemon } = useContext(ThemeContext);
+  const { pokemon } = useContext(ThemeContext);
   return (
     <Container>
       <Wrapper>

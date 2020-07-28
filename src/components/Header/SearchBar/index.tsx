@@ -8,7 +8,11 @@ const SearchBar: React.FC = () => {
   const handleSearchInput = () => {};
   return (
     <Container>
-      <input type="text" placeholder="Search" onChange={handleSearchInput} />
+      <input
+        type="text"
+        placeholder="Pesquisar..."
+        onChange={handleSearchInput}
+      />
       <button type="button" onClick={handleClickSearch}>
         <MdSearch size={18} color="#333" />
       </button>

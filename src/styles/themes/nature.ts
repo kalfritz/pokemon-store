@@ -1,14 +1,16 @@
 export default {
-  title: 'nature',
+  store: 'nature',
   pokemon: {
     id: 1,
     name: 'bulbasaur',
+    pic:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png',
   },
   colors: {
-    primary: '#00ff00',
-    secundary: '#ffffff',
-    text: '#111',
-    textHover: '#000',
+    primary: 'rgb(0, 244, 0)',
+    secundary: '#eee',
+    text: '#f5f5f5',
+    textHover: '#fff',
     background: '#f5f5f5',
   },
 };
