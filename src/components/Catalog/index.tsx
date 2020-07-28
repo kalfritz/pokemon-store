@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useMemo } from 'react';
 
 import { ThemeContext } from 'styled-components';
 
@@ -17,6 +17,7 @@ import EmptyCatalog from 'components/EmptyCatalog';
 interface Catalog {
   items: Pokemon[] | null;
   loading: boolean;
+  query: string;
 }
 
 type Pokemon = {
@@ -84,34 +85,47 @@ const Catalog: React.FC = () => {
       return 0;
     }
   };
+
+  const filteredPokemon = useMemo(() => {
+    return catalog?.items!.filter((poke: Pokemon) =>
+      poke.name.includes(catalog.query)
+    );
+  }, [catalog]);
+
   return (
     <Container>
       {catalog!.items!.length > 0 ? (
-        <PokemonItems>
-          {catalog?.items!.map((pokemon: Pokemon) => (
-            <PokemonItem key={pokemon.id}>
-              <div>
-                <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
-                <p>{pokemon.name}</p>
-                <span>R${pokemon.price}</span>
-              </div>
-              <footer>
-                <div>
-                  <span>{amount(pokemon)}</span>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    handleAddToCart(pokemon);
-                  }}
-                >
-                  Adicionar
-                  <MdAddShoppingCart size={16} />
-                </button>
-              </footer>
-            </PokemonItem>
-          ))}
-        </PokemonItems>
+        <>
+          <PokemonItems>
+            {filteredPokemon.length > 0 &&
+              filteredPokemon.map((pokemon: Pokemon) => (
+                <PokemonItem key={pokemon.id}>
+                  <div>
+                    <img
+                      src={pokemon.sprites?.front_default}
+                      alt={pokemon.name}
+                    />
+                    <p>{pokemon.name}</p>
+                    <span>R${pokemon.price}</span>
+                  </div>
+                  <footer>
+                    <div>
+                      <span>{amount(pokemon)}</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        handleAddToCart(pokemon);
+                      }}
+                    >
+                      Adicionar
+                      <MdAddShoppingCart size={16} />
+                    </button>
+                  </footer>
+                </PokemonItem>
+              ))}
+          </PokemonItems>
+        </>
       ) : (
         <EmptyCatalog />
       )}

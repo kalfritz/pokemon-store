@@ -4,18 +4,22 @@ const INITIAL_STATE = {
   fire: {
     items: [],
     loading: false,
+    query: '',
   },
   water: {
     items: [],
     loading: false,
+    query: '',
   },
   nature: {
     items: [],
     loading: false,
+    query: '',
   },
   eletro: {
     items: [],
     loading: false,
+    query: '',
   },
 };
 
@@ -23,18 +27,22 @@ interface Catalog {
   fire: {
     items: Pokemon[] | null;
     loading: boolean;
+    query: string;
   };
   water: {
     items: Pokemon[] | null;
     loading: boolean;
+    query: string;
   };
   nature: {
     items: Pokemon[] | null;
     loading: boolean;
+    query: string;
   };
   eletro: {
     items: Pokemon[] | null;
     loading: boolean;
+    query: string;
   };
 }
 type Pokemon = {
@@ -57,6 +65,8 @@ type Action = {
   type: string;
   payload: {
     pokemonList: Pokemon[];
+    query?: string;
+    store?: string;
   };
 };
 export default function catalog(
@@ -100,6 +110,42 @@ export default function catalog(
         const { pokemonList } = action.payload;
         draft.eletro.loading = false;
         draft.eletro.items = pokemonList;
+        break;
+      }
+      case '@catalog/UPDATE_QUERY': {
+        const { store, query } = action.payload;
+        switch (store) {
+          case 'fire':
+            draft.fire.query = query!;
+            break;
+          case 'water':
+            draft.water.query = query!;
+            break;
+          case 'nature':
+            draft.nature.query = query!;
+            break;
+          case 'eletro':
+            draft.eletro.query = query!;
+            break;
+        }
+        break;
+      }
+      case '@catalog/RESET_QUERY': {
+        const { store } = action.payload;
+        switch (store) {
+          case 'fire':
+            draft.fire.query = '';
+            break;
+          case 'water':
+            draft.water.query = '';
+            break;
+          case 'nature':
+            draft.nature.query = '';
+            break;
+          case 'eletro':
+            draft.eletro.query = '';
+            break;
+        }
         break;
       }
       default: {

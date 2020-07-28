@@ -62,3 +62,19 @@ export function fetchWaterPokemonSuccess(payload: PayloadSuccess) {
     payload: { pokemonList: payload.pokemonList },
   };
 }
+type queryPayload = {
+  store: string;
+  query?: string;
+};
+export function updateQuery(payload: queryPayload) {
+  return {
+    type: '@catalog/UPDATE_QUERY',
+    payload: { store: payload.store, query: payload.query },
+  };
+}
+export function resetQuery(payload: queryPayload) {
+  return {
+    type: '@catalog/RESET_QUERY',
+    payload: { store: payload.store },
+  };
+}

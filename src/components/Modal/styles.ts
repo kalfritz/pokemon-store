@@ -46,6 +46,9 @@ export const Box = styled.div`
 
   nav {
     text-align: center;
+    div {
+      margin-bottom: 10px;
+    }
     a {
       text-decoration: none;
       color: #222;

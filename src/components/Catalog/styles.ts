@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { lighten } from 'polished';
 
 export const PokemonItems = styled.div`
-  background: #eee;
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -33,10 +32,11 @@ export const PokemonItems = styled.div`
 export const Container = styled.div`
   height: 80vh;
   overflow: auto;
+  background: #eee;
 `;
 
 export const PokemonItem = styled.div`
-  background: #fff;
+  background: #eee;
   border-bottom: 0;
   border-radius: 5px;
   &:last-child {
@@ -44,6 +44,7 @@ export const PokemonItem = styled.div`
   }
 
   & > div {
+    background: #fff;
     padding: 20px;
     border: 1px solid #999;
     display: flex;
@@ -115,3 +116,4 @@ export const PokemonItem = styled.div`
     }
   }
 `;
+export const ZeroPokemonFound = styled.div``;
